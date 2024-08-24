@@ -32,7 +32,9 @@ La comuna a analizar es: ${floodData.properties.NOM_COMUNA}
 
 Los indicadores para esta comuna son: ${JSON.stringify(floodData.properties, null, 2)}
   
-Para responder, hazlo en formato markdown, es español, y no incluyas los valores de los indicadores. La estructura que debes seguir es la siguiente estructura (1 párrafo por item):
+Para responder, hazlo en formato markdown, es español, y no incluyas los valores de los indicadores. Puedes marcar con negrita los puntos más importantes.
+
+La estructura que debes seguir es la siguiente estructura (1 párrafo por item):
 
 ## Amenaza de inundaciones
 
@@ -46,9 +48,11 @@ Para responder, hazlo en formato markdown, es español, y no incluyas los valore
 
 ...
 
-## Capacidad de respuesta
+## Sugerencias de mejora
 
-...
+- sugerencia 1
+- ...
+- sugerencia N
   `.trim()
 }
 
