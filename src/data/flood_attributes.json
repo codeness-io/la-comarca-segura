@@ -1,0 +1,482 @@
+[
+  {
+    "ID Atributo": "asentamientos_amen_inund_1_delta",
+    "Nombre": "Amenaza periodo de retorno 05 años [Cambio entre Presente y Futuro, Año completo]",
+    "Descripción": "Indice de amenaza diferencial  T = 5 años",
+    "Unidad": "-"
+  },
+  {
+    "ID Atributo": "asentamientos_amen_inund_1_fut",
+    "Nombre": "Amenaza periodo de retorno 05 años futuro",
+    "Descripción": "Indice de amenaza futura T = 5 años",
+    "Unidad": "-"
+  },
+  {
+    "ID Atributo": "asentamientos_amen_inund_1_pres",
+    "Nombre": "Amenaza periodo de retorno 05 años presente",
+    "Descripción": "Indice de amenaza presente T = 5 años",
+    "Unidad": "-"
+  },
+  {
+    "ID Atributo": "asentamientos_amen_inund_2_delta",
+    "Nombre": "Amenaza periodo de retorno 10 años [Cambio entre Presente y Futuro, Año completo] delta",
+    "Descripción": "Indice de amenaza diferencial  T = 10 años",
+    "Unidad": "-"
+  },
+  {
+    "ID Atributo": "asentamientos_amen_inund_2_fut",
+    "Nombre": "Amenaza periodo de retorno 10 años futuro",
+    "Descripción": "Indice de amenaza futura T = 10 años",
+    "Unidad": "-"
+  },
+  {
+    "ID Atributo": "asentamientos_amen_inund_2_pres",
+    "Nombre": "Amenaza periodo de retorno 10 años presente",
+    "Descripción": "Indice de amenaza presente T = 10 años",
+    "Unidad": "-"
+  },
+  {
+    "ID Atributo": "asentamientos_amen_inund_3_delta",
+    "Nombre": "Amenaza periodo de retorno 20 años [Cambio entre Presente y Futuro, Año completo]",
+    "Descripción": "Indice de amenaza diferencial T = 20 años",
+    "Unidad": "-"
+  },
+  {
+    "ID Atributo": "asentamientos_amen_inund_3_fut",
+    "Nombre": "Amenaza periodo de retorno 20 años futuro",
+    "Descripción": "Indice de amenaza futura T = 20 años",
+    "Unidad": "-"
+  },
+  {
+    "ID Atributo": "asentamientos_amen_inund_3_pres",
+    "Nombre": "Amenaza periodo de retorno 20 años presente",
+    "Descripción": "Indice de amenaza presente T = 20 años",
+    "Unidad": "-"
+  },
+  {
+    "ID Atributo": "asentamientos_exp_inund_1_fut",
+    "Nombre": "Población urbana expuesta en el futuro por comuna",
+    "Descripción": "Cantidad de población urbana que se espera estar expuesta en el 2035 en zonas urbanas",
+    "Unidad": "Cantidad de personas"
+  },
+  {
+    "ID Atributo": "asentamientos_exp_inund_1_pres",
+    "Nombre": "Población urbana por comuna",
+    "Descripción": "Cantidad de personas por comuna que vivien en zonas urbanas",
+    "Unidad": "Cantidad de personas"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_amen_inund_fut",
+    "Nombre": "Indice de Amenaza futura",
+    "Descripción": "Índice de Amenaza futura Inundaciones (output no estandarizado, solo referencial, no se usa para los mapas)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_amen_inund_fut_estandar",
+    "Nombre": "Indice de Amenaza futura (estandarizado)",
+    "Descripción": "Índice de Amenaza futura Inundaciones (output estandarizado, para generar los mapas)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_amen_inund_pres",
+    "Nombre": "Indice de Amenaza presente",
+    "Descripción": "Índice de Amenaza presente Inundaciones (output no estandarizado, solo referencial, no se usa para los mapas)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_amen_inund_pres_estandar",
+    "Nombre": "Indice de Amenaza presente (estandarizado)",
+    "Descripción": "Índice de Amenaza presente Inundaciones (output estandarizado, para generar los mapas)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_exp_inund_fut",
+    "Nombre": "Índice Exposición futura",
+    "Descripción": "Índice de Exposición futura a inundaciones (output no estandarizado, solo referencial, no se usa para los mapas)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_exp_inund_fut_estandar",
+    "Nombre": "Índice Exposición futura (estandarizado)",
+    "Descripción": "Índice de Exposición futura a inundaciones (output estandarizado, para generar los mapas)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_exp_inund_pres",
+    "Nombre": "Índice Exposición presente",
+    "Descripción": "Índice de Exposición presente a inundaciones (output no estandarizado, solo referencial, no se usa para los mapas)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_exp_inund_pres_estandar",
+    "Nombre": "Índice Exposición presente (estandarizado)",
+    "Descripción": "Índice de Exposición presente a inundaciones (output estandarizado, para generar los mapas)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_riesgo_inund_fut",
+    "Nombre": "ind_riesgo_inund_fut",
+    "Descripción": "Indice de Riesgo futuro(output no estandarizado, para mostrar numéricamente)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_riesgo_inund_fut_estandar",
+    "Nombre": "ind_riesgo_inund_fut_estandar",
+    "Descripción": "Indice de Riesgo futuro (estandarizado)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_riesgo_inund_pres",
+    "Nombre": "ind_riesgo_inund_pres",
+    "Descripción": "Indice de Riesgo presente (output no estandarizado, para mostrar numéricamente)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_riesgo_inund_pres_estandar",
+    "Nombre": "ind_riesgo_inund_pres_estandar",
+    "Descripción": "Indice de Riesgo presente (estandarizado)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_sens_inund_estandar",
+    "Nombre": "Indice de Sensibilidad (estandarizado)",
+    "Descripción": "Índice de Sensibilidad Inundaciones (output estandarizado, para generar los mapas)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_1_1",
+    "Nombre": "Población infantil",
+    "Descripción": "Cantidad de población menor a 5 años sobre cantidad total de población de la comuna.",
+    "Unidad": "Proporción de personas"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_1_3",
+    "Nombre": "Mujeres jefas de hogar con pob. Dependiente",
+    "Descripción": "Proporción de hogares liderados por una mujer con existencia de población dependiente (niños, niñas, adolescente y adultos mayores)",
+    "Unidad": "Proporción de personas"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_1_2",
+    "Nombre": "Población adulto mayor",
+    "Descripción": "Cantidad de personas de 65 años o más por sobre el total de poblacion de la comuna",
+    "Unidad": "Proporción de personas"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_1_5",
+    "Nombre": "Población migrante",
+    "Descripción": "Cantidad de población migrante  sobre la cantidad de población total de la comuna",
+    "Unidad": "Proporción de personas"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_1_4",
+    "Nombre": "Población perteneciente a Pueblos originarios",
+    "Descripción": "Cantidad de personas de una etnia originaria por sobre el total de poblacion de la comuna",
+    "Unidad": "Proporción de personas"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_1_6",
+    "Nombre": "Pobreza por ingresos",
+    "Descripción": "Cantidad de hogares pobres por ingreso por sobre el total de hogares de la comuna",
+    "Unidad": "Proporción de hogares"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_1_7",
+    "Nombre": "Pobreza multidimensional",
+    "Descripción": "Cantidad de hogares pobres multidimensional (5 dimensiones) por sobre el total de hogares de la comuna",
+    "Unidad": "Proporción de hogares"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_2_1",
+    "Nombre": "Hacinamiento en areas urbanas",
+    "Descripción": "Cantidad de personas dividido por el total de personas en la vivienda.",
+    "Unidad": "Proporción de viviendas"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_2_2",
+    "Nombre": "Tipo de construcción en areas urbanas",
+    "Descripción": "Cantidad de viviendas de tipo: Vivienda tradicional indígena (ruka, pae pae u otras), Pieza en casa antigua o en conventillo, Mediagua, mejora, rancho o choza, Móvil (carpa, casa rodante o similar) por sobre el total de viviendas en areas urbanas de la comuna",
+    "Unidad": "Proporción de viviendas"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_2_3",
+    "Nombre": "Materialidad de la vivienda",
+    "Descripción": "Cantidad de viviendas urbanas con materiales precarios en techos y muros",
+    "Unidad": "Viviendas"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_3_1",
+    "Nombre": "Impermeabilización del suelo",
+    "Descripción": "Nivel de impermeabilización del suelo originado por acción antrópica",
+    "Unidad": "Proporción  suelo impermeable"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_3_2",
+    "Nombre": "Historial de inundaciones",
+    "Descripción": "Cantidad de eventos de inundaciones por comuna en el periodo 1970-2014",
+    "Unidad": "Número"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_3_3",
+    "Nombre": "Asentamientos humanos no planificados",
+    "Descripción": "Cantidad de campamentos",
+    "Unidad": "Número"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_3_4",
+    "Nombre": "Desigualdad socio-material",
+    "Descripción": "Nivel segregación a partir de un indice sociomaterial por vivienda.",
+    "Unidad": "Nivel de segregación"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_3_5",
+    "Nombre": "Establecimientos de salud",
+    "Descripción": "Cantidad de establecimientos de salud por comuna",
+    "Unidad": "Número"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_3_6",
+    "Nombre": "Establecimientos de educación",
+    "Descripción": "Cantidad de establecimientos de educación por comuna",
+    "Unidad": "Número"
+  },
+  {
+    "ID Atributo": "asentamientos_sens_inund_3_7",
+    "Nombre": "",
+    "Descripción": "Cantidad de establecimientos de educación por comuna",
+    "Unidad": "Número"
+  },
+  {
+    "ID Atributo": "NOM_PROVIN",
+    "Nombre": "Nombre de Provincia",
+    "Descripción": "Nombre de la Provincia a la cual la comuna pertenece",
+    "Unidad": ""
+  },
+  {
+    "ID Atributo": "NOM_REGION",
+    "Nombre": "Nombre de la Región",
+    "Descripción": "Nombre de la Región a la cuál pertenece la comuna",
+    "Unidad": ""
+  },
+  {
+    "ID Atributo": "NOM_COMUNA",
+    "Nombre": "",
+    "Descripción": "",
+    "Unidad": ""
+  },
+  {
+    "ID Atributo": "asentamientos_ind_amen_inund_delta",
+    "Nombre": "Indice de Amenaza diferencial",
+    "Descripción": "Índice de Amenaza diferencial Inundaciones (output no estandarizado, solo referencial, no se usa para los mapas Y en los mapas)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_riesgo_inund_delta",
+    "Nombre": "ind_riesgo_delta",
+    "Descripción": "Índice de Riesgo Diferencial",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_resp_inund",
+    "Nombre": "",
+    "Descripción": "Índice de Capacidad de respuesta(output no estandarizado, para mostrar numéricamente)",
+    "Unidad": "Índice (valor)"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_res_estandar",
+    "Nombre": "Indicador de resiliencia preliminar estandarizado",
+    "Descripción": "Indicador estandarizado que analiza de manera genérica la capacidad de los sistemas para responder y adaptarse a las amenazas a las que están expuestos",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_10",
+    "Nombre": "Estructura municipal cuenta con Unidad de GRD y/o Protección Civil",
+    "Descripción": "Existencia, funcionamiento e incidencia de una Unidad de Gestión del Riesgo de Desastres y/o Protección Civil en la estructura Municipal. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_1",
+    "Nombre": "Municipio cuenta con IPTs",
+    "Descripción": "Nivel en que el municipio cuenta con Instrumentos Planificación Territorial (IPTs), que corresponden a: Plan Seccional, Plan Regulador, Comunal (PRC), Plan Regulador Intercomunal (PRI), Plan Regulador Metropolitano (PRM) y Plan Regional de Desarrollo Urbano (PRDU). Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_11",
+    "Nombre": "Capacitación equipo municipal en GRD",
+    "Descripción": "Nivel de capacitación especializada y periódica del equipo municipal en materia de gestión de riesgos de desastre. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_12",
+    "Nombre": "Autonomía financiera y de toma de decisiones para GRD",
+    "Descripción": "Nivel de autonomía financiera y de toma de decisiones del municipio en materia de gestión de riesgo de desastres en la comuna. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_2",
+    "Nombre": "Municipio cuenta con SCAM",
+    "Descripción": "Municipio cuenta con Sistema de Certificación Ambiental Municipal (SCAM)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_3",
+    "Nombre": "Municipio con ECC",
+    "Descripción": "Municipio cuenta con Estrategia de Comunicación de Cambio Climático (ECC)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_4",
+    "Nombre": "Comuna ejecuta proyectos financiados por PREMIR",
+    "Descripción": "Comuna ejecuta proyectos financiados por el Programa de Prevención y Mitigación de Riesgos (PREMIR)",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_5",
+    "Nombre": "Municipio cuenta con plan de inversión en obras de mitigación",
+    "Descripción": "Municipio cuenta con plan de inversión en obras de mitigación suficientes para reducir adecuadamente el riesgo de desastres identificado en la comuna. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_6",
+    "Nombre": "Gestión local y adaptación al cambio climático",
+    "Descripción": "Municipio cuenta con diseño e implementación de estrategias y medidas locales para la adaptación al cambio climático. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_7",
+    "Nombre": "Municipio que cuenta con Instrumentos locales para GRD",
+    "Descripción": "Municipio cuenta con instrumentos locales para gestión de riesgos de desastres, que corresponden a: Plan Comunal de Emergencia, Planes de Contingencia, Plan Sectoriales de Respuesta, Planes de GRD, entre otros. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_9",
+    "Nombre": "Municipio cuenta con acceso a información sobre impacto del cambio climático",
+    "Descripción": "Municipio cuenta con información georreferenciada y actualizada de los posibles impactos del cambio climático reducidos, además de preservar la data histórica de eventos extremos ocurridos en la comuna. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_1_8",
+    "Nombre": "Municipio cuenta con PCM",
+    "Descripción": "Municipio cuenta con Perfil Climático Municipal (PCM) que un punto de partida para la preparación de una estrategia de adaptación al cambio climático, entre la información que sistematiza se encuentran: la presencia de estructura municipal vinculada con temas ambientales, de emergencia, presupuesto, existencia de ordenanzas, reglamentos, etc.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_2_2",
+    "Nombre": "Conformación de COSOC",
+    "Descripción": "Nivel de conformación de los Consejos de la Sociedad Civil (COSOC) de la municipalidad. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_2_1",
+    "Nombre": "Carácter de la participación ciudadana",
+    "Descripción": "Nivel de articulación entre gobierno local y ciudanía, basado en la eficiencia de los canales oficiales de información y las plataformas de participación vinculante. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_2_4",
+    "Nombre": "Espacios municipales de expresión e integración multicultural",
+    "Descripción": "Municipio cuenta con espacios formales que faciliten la expresión y/o integración de la multiculturalidad (interculturalidad) representativa del territorio. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_2_3",
+    "Nombre": "Organizaciones de la sociedad civil con intervención en GRD en el territorio",
+    "Descripción": "Capacidad municipal de coordinación con las organizaciones comunitarias que aborden temáticas de gestión de riesgo de desastre en el territorio. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_2_5",
+    "Nombre": "Enfoque inclusivo en ámbitos de la gestión municipal",
+    "Descripción": "Nivel de incorporación del enfoque inclusivo en medidas de gestión municipal, que garanticen y promuevan el Derecho a la Accesibilidad y Diseño Universal (talleres, adaptación de espacios locales hacia un diseño universal, incorporación de señalética y lenguaje universal, entre otros). Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_2_6",
+    "Nombre": "Municipio comunica oferta de programas sociales",
+    "Descripción": "Municipio cuenta con mecanismos para informar la oferta de programas que forman parte de los servicios de protección social disponibles para la población, además de su capacidad de gestionar la oferta programática y de fondos a la comunidad a partir de conocer las necesidades actuales y reales de la población beneficiaria de programas sociales. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_2_7",
+    "Nombre": "Mecanismos de rendición de cuentas de la gestión municipal",
+    "Descripción": "Municipio cuenta con mecanismos de rendición de cuentas formales y acorde al Plan de Desarrollo Comunal (PLADECO), principal instrumento de planificación y gestión municipal. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_3_1",
+    "Nombre": "Riesgo de desertificación, degradación de las tierras y sequía",
+    "Descripción": "Este indicador muestra la clasificación de las comunas del país según su riesgo de desertificación, degradación de las tierras y el grado de la sequía. El indicador combina tres modelos: el de riesgo de desertificación (con ponderación 0,4), de degradación (con ponderación 0,3) y de sequía combinada (con ponderación 0,3).",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_3_2",
+    "Nombre": "Existencia de actividades económicas productivas expuestas a amenazas",
+    "Descripción": "Existencia de actividades económicas de zonas rurales y urbanas expuestas a amenazas, según la existencia o suficiencia de medidas de contingencia, mitigación, recuperación y/o preparación. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_3_3",
+    "Nombre": "Déficit habitacional",
+    "Descripción": "Indicador que muestra el peso relativo del déficit habitacional sobre el parque habitacional de la comuna.",
+    "Unidad": "Porcentaje"
+  },
+  {
+    "ID Atributo": "asentamientos_res_4_1",
+    "Nombre": "Tasa de establecimientos de salud",
+    "Descripción": "Índice de presencia de establecimientos de salud creado a partir de la cantidad y tipo de establecimientos a cada Comuna. La ponderacion según tipo de establecimiento es la siguiente:  primaria 0,25;  secundaria 0,1;  terciaria 0,5; no aplica 0,05; dirección 0,1. Luego se calculó la tasa de este índice por cada 100.000 habitantes y se normalizó entre 0 y 1 por clusters, según el número de habitantes de la comuna. Se utilizó como umbrales, 6.000,  20.000, 50.000 y 100.000 personas  para definir 5 cluster posibles.",
+    "Unidad": "Tasa"
+  },
+  {
+    "ID Atributo": "asentamientos_res_3_4",
+    "Nombre": "Emplazamiento de infraestructura crítica en zonas de amenaza",
+    "Descripción": "Nivel de emplazamiento de la infraestructura crítica (transporte, sanitaria, energética y telecomunicaciones) en zonas de amenazas y existencia de medidas de mitigación y planes de recuperación temprana y de continuidad operacional que permitan la reanudación/prestación oportuna del servicio que brindan.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_4_3",
+    "Nombre": "Tasa de unidades o destacamentos de carabineros",
+    "Descripción": "Índice de presencia de establecimientos de salud creado a partir de la cantidad y tipo de establecimientos a cada Comuna. La ponderacion según tipo de establecimiento es la siguiente: Comisaria 0,4; Retén, subcomisaria, subcomisaria carretera, tenencia y tenencia de carreteras 0,2; puesto de control y garitas comunitarias 0,1; avanzada 0,05. Luego se calculó la tasa de este índice cada 100.000 habitantes y se normalizó entre 0 y 1  por clusters, segun el numero de habitantes de la comuna. Se utilizo como umbrales, 6000,  20.000, 50.000 y 100.000 personas para definir 5 cluster posibles.",
+    "Unidad": "Tasa"
+  },
+  {
+    "ID Atributo": "asentamientos_res_4_2",
+    "Nombre": "Tasa de compañías de bomberos",
+    "Descripción": "Tasa de número de compañias de bomberos por cada 100.000 habitantes. Se normalizaron resultados entre 0 y 1 por clusters, según el número de habitantes de la comuna. Se utilizó como umbrales, 6.000, 20.000, 50.000 y 100.000 personas para definir 5 cluster posibles",
+    "Unidad": "Tasa"
+  },
+  {
+    "ID Atributo": "asentamientos_res_5_1",
+    "Nombre": "Cantidad de localidades aisladas",
+    "Descripción": "Número de localidades dentro de la comuna que se encuentran en situación de aislamiento. Por aislamiento se considera un espacio físico que se encuentra: lejos, apartado, desconectado, con difícil acceso, incomunicado, o en situación de isla. La definición de localidades aisladas se realiza a nivel comunal según la relación existente entre los componentes de Aislamiento Estructural (variables morfológicas, clima y demográficas) y Grado de Integración (capacidad que tiene el sistema regional para atenuar estas condiciones desventajosas y lograr niveles de integración que permitan que los territorios sobrepasen, aminoren o mitiguen los perjuicios del aislamiento y puedan acceder a las dinámicas y servicios sociales, económicos, políticos, y cívicos, entre otros, del que gozan la mayoría de los habitantes del país).",
+    "Unidad": "Número de localidades aisladas"
+  },
+  {
+    "ID Atributo": "asentamientos_res_4_4",
+    "Nombre": "Planificación de seguridad pública en situaciones de emergencias",
+    "Descripción": "Nivel de planificación en etapa de preparación e implementación de medidas tendientes a cautelar condiciones de seguridad específicas en situaciones de emergencia, tanto para la protección de las personas y los bienes, que apunten a prevenir delitos de mayor connotación social. Ejemplo de medidas son: albergues, barrios transitorios, centros de distribución y acopio, zonas de seguridad, entre otros espacios públicos. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_5_3",
+    "Nombre": "Localización de asentamientos humanos en zonas de amenaza",
+    "Descripción": "Existencia de asentamientos humanos localizados en zonas de amenazas identificadas en antecedentes oficiales reconocidos y validados por el Municipio. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_res_5_2",
+    "Nombre": "Porcentaje de población en situación de aislamiento",
+    "Descripción": "Porcentaje de población que reside en localidades en situación de aislamiento.",
+    "Unidad": "Porcentaje"
+  },
+  {
+    "ID Atributo": "asentamientos_res_5_4",
+    "Nombre": "Presencia de asentamientos humanos irregulares",
+    "Descripción": "Existencia de asentamientos humanos en ocupaciones irregulares (asociado principalmente a la presencia de \"tomas\", \"campamentos\" y movimientos \"okupas\") presentes en la comuna y el municipio cuenta con estrategias de intervención. Con el objetivo de facilitar el análisis en torno a la resiliencia, se transformó el indicador original con 4 categorías de riesgo (nulo, bajo, medio y alto), a uno de tipo numérico en donde se invierte la dirección del indicador asumiendo 4 valores (0; 0,3; 0,6 y 1), de esta manera si el indicador es 1 se interpreta que es menor el riesgo.",
+    "Unidad": "Índice"
+  },
+  {
+    "ID Atributo": "asentamientos_ind_resiliencia_inund",
+    "Nombre": "Indice de Resiliencia",
+    "Descripción": "Índice de Resiliencia (output no estandarizado, para mostrar numéricamente)",
+    "Unidad": "Índice (valor)"
+  }
+]

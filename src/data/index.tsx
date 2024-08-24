@@ -1,6 +1,6 @@
 import slugify from "slugify"
 
-const floodAttributes = [
+export const floodAttributesToAnalyze = [
   'asentamientos_amen_inund_1_delta',
   'asentamientos_amen_inund_1_fut',
   'asentamientos_amen_inund_1_pres',
@@ -84,7 +84,7 @@ const floodAttributes = [
 ]
 
 const dataUrl = {
-  flood: `https://arclim.mma.gob.cl/features/attributes/comunas/?attributes=${floodAttributes.join(',')}&format=geojson&file_name=ARCLIM_asentamientos_inundaciones_comunas`
+  flood: `https://arclim.mma.gob.cl/features/attributes/comunas/?attributes=${floodAttributesToAnalyze.join(',')}&format=geojson&file_name=ARCLIM_asentamientos_inundaciones_comunas`
 }
 
 type FloodRow = {
@@ -99,8 +99,14 @@ type FloodCollection = {
   features: Array<FloodRow>
 }
 
-export async function getFloodData(commune: string) {
+export async function getFloodData(commune: string): Promise<FloodRow> {
   const response = await fetch(dataUrl.flood)
   const floodData = await response.json()
-  return ((floodData as any) as FloodCollection).features.find((data) => slugify(data.properties['NOM_COMUNA'], { lower: true }) === commune)
+  const floodRow = ((floodData as any) as FloodCollection).features.find((data) => slugify(data.properties['NOM_COMUNA'], { lower: true }) === commune)
+
+  if (!floodRow) {
+    throw new Error(`No data found for commune: ${commune}`)
+  }
+
+  return floodRow
 }
