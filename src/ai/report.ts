@@ -1,6 +1,8 @@
 import {floodAttributesToAnalyze, getFloodData} from "@/data"
 import floodAttributesDescription from "@/data/flood_attributes.json"
 import { json2csv } from 'json-2-csv'
+import { generateText } from 'ai';
+import { openai } from '@ai-sdk/openai'; // Ensure OPENAI_API_KEY environment variable is set
 
 export function getFloodSystemPrompt() {
   const attributesSet = new Set(floodAttributesToAnalyze)
@@ -48,4 +50,16 @@ Para responder, hazlo en formato markdown, es español, y no incluyas los valore
 
 ...
   `.trim()
+}
+
+export async function generateReport(commune: string) {
+  console.time('OpenAI GPT-4o')
+  const { text } = await generateText({
+    model: openai('gpt-4o'),
+    system: getFloodSystemPrompt(),
+    prompt: await getFloodUserPrompt(commune),
+  });
+  console.timeEnd('OpenAI GPT-4o')
+
+  return text
 }
