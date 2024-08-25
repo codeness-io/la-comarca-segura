@@ -1,0 +1,26 @@
+.reportCard {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+}
+
+.listSection {
+  background-color: rgb(236 242 248);
+  border-radius: 16px;
+  padding: 0px 32px;
+}
+
+.listElement {
+  border-bottom: 1px solid #061C3D12;
+  padding: 32px 0px;
+}
+
+.listElement:last-child {
+  border-bottom: none;
+}
+
+.improvementDescription {
+  margin-top: 8px;
+  font-size: 18px;
+}

@@ -1,8 +1,9 @@
 import communes from "@/data/communes.json"
 import slugify from "slugify"
 
-type PrecipitationData = {
+export type PrecipitationData = {
   daily: {
+    time: string[];
     precipitation_sum: number[]
   }
 }
@@ -24,5 +25,6 @@ export async function getPrecipitationForecast(commune: string) {
   const { latitude, longitude } = getCommuneLatLong(commune)
   const response = await fetch(`https://api.open-meteo.com/v1/forecast?daily=precipitation_sum&latitude=${latitude}&longitude=${longitude}&current=precipitation&timezone=America%2FSantiago&forecast_days=16`)
   const data = await response.json()
+  console.log(data);
   return data as PrecipitationData
 }
