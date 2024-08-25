@@ -1,7 +1,7 @@
 import {floodAttributesToAnalyze, getFloodData} from "@/data"
 import floodAttributesDescription from "@/data/flood_attributes.json"
 import { json2csv } from 'json-2-csv'
-import { generateText, generateObject } from 'ai';
+import { generateObject } from 'ai';
 import { openai } from '@ai-sdk/openai'; // Ensure OPENAI_API_KEY environment variable is set
 import { z } from 'zod';
 
@@ -35,38 +35,37 @@ Los indicadores para esta comuna son: ${JSON.stringify(floodData.properties, nul
   
 Para responder, hazlo en formato markdown, es español, y no incluyas los valores de los indicadores. Puedes marcar con negrita los puntos más importantes.
 
-La estructura que debes seguir es la siguiente estructura (1 párrafo por item):
+La estructura que debes seguir es la siguiente estructura JSON:
 
-### Amenaza de inundaciones
-
-...
-
-### Exposición (Cuántas personas están en riesgo)
-
-...
-
-### Riesgo (amenaza vs exposición)
-
-...
-
-### Sugerencias de mejora
-
-- sugerencia 1
-- ...
-- sugerencia N
+{
+  "risk": "(Amenaza de inundaciones)",
+  "exposition": "(Cuántas personas están en riesgo)",
+  "risk_vs_exposition": "(Riesgo - amenaza vs exposición)",
+  "improvements": ["Sugerencia de mejora 1", ..., "Sugerencia N"]}
+}
   `.trim()
 }
 
 export async function generateReport(commune: string) {
   console.time('OpenAI GPT-4o')
-  const { text } = await generateText({
+
+  const expected = z.object({
+    risk: z.string(),
+    exposition: z.string(),
+    risk_vs_exposition: z.string(),
+    improvements: z.array(z.string())
+  })
+
+  const { object } = await generateObject({
     model: openai('gpt-4o'),
+    schema: expected,
     system: getFloodSystemPrompt(),
     prompt: await getFloodUserPrompt(commune),
   });
+
   console.timeEnd('OpenAI GPT-4o')
 
-  return text
+  return object
 }
 
 export async function recommendationsForTheCommunity(commune: string, report: string) {
