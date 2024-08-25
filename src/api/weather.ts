@@ -4,7 +4,11 @@ import slugify from "slugify"
 export type PrecipitationData = {
   daily: {
     time: string[];
-    precipitation_sum: number[]
+    precipitation_sum: (number | null)[]
+  },
+  hourly: {
+    time: string[];
+    precipitation: (number | null)[]
   }
 }
 
@@ -23,7 +27,7 @@ function getCommuneLatLong(commune: string) {
 
 export async function getPrecipitationForecast(commune: string) {
   const { latitude, longitude } = getCommuneLatLong(commune)
-  const response = await fetch(`https://api.open-meteo.com/v1/forecast?daily=precipitation_sum&latitude=${latitude}&longitude=${longitude}&current=precipitation&timezone=America%2FSantiago&forecast_days=16`)
+  const response = await fetch(`https://api.open-meteo.com/v1/forecast?daily=precipitation_sum&hourly=precipitation&latitude=${latitude}&longitude=${longitude}&current=precipitation&timezone=America%2FSantiago&forecast_days=16`)
   const data = await response.json()
   console.log(data);
   return data as PrecipitationData
