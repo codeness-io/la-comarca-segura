@@ -1,8 +1,9 @@
 import {floodAttributesToAnalyze, getFloodData} from "@/data"
 import floodAttributesDescription from "@/data/flood_attributes.json"
 import { json2csv } from 'json-2-csv'
-import { generateText } from 'ai';
+import { generateText, generateObject } from 'ai';
 import { openai } from '@ai-sdk/openai'; // Ensure OPENAI_API_KEY environment variable is set
+import { z } from 'zod';
 
 export function getFloodSystemPrompt() {
   const attributesSet = new Set(floodAttributesToAnalyze)
@@ -36,19 +37,19 @@ Para responder, hazlo en formato markdown, es español, y no incluyas los valore
 
 La estructura que debes seguir es la siguiente estructura (1 párrafo por item):
 
-## Amenaza de inundaciones
+### Amenaza de inundaciones
 
 ...
 
-## Exposición (Cuántas personas están en riesgo)
+### Exposición (Cuántas personas están en riesgo)
 
 ...
 
-## Riesgo (amenaza vs exposición)
+### Riesgo (amenaza vs exposición)
 
 ...
 
-## Sugerencias de mejora
+### Sugerencias de mejora
 
 - sugerencia 1
 - ...
@@ -66,4 +67,39 @@ export async function generateReport(commune: string) {
   console.timeEnd('OpenAI GPT-4o')
 
   return text
+}
+
+export async function recommendationsForTheCommunity(commune: string, report: string) {
+  const systemPrompt = `
+Eres un asesor de gobierno de Chile sobre riesgo y mitigación de consecuencias del cambio climático en Chile.
+
+Tu objetivo es generar medidas recomendadas para los habitantes de la comuna en base a la información de un reporte de riesgo de inundaciones.
+
+El reporte contiene la siguiente información: Amenazas, Exposición, Riesgo y Sugerencias de mejora.
+`.trim()
+
+  const userPrompt = `
+  En base al siguiente reporte de la comuna de ${commune} (Chile), genera un listado de medidas recomendadas que un habitante normal puede seguir para mitigar los riesgos de inundaciones.
+  
+  Tu respuesta debe ser un listado recomendaciones en español (JSON). Cada recomendación debe ser simple, no técnica y fácil de seguir.
+  
+  {"recommendations": ["Medida 1", "**Medida 2**", ..., "Medida N"]}
+  
+  ${report}
+`.trim()
+
+  const expected = z.object({
+    recommendations: z.array(z.string())
+  })
+
+  console.time('OpenAI GPT-4o (recommendationsForTheCommunity)')
+  const { object } = await generateObject({
+    model: openai('gpt-4o'),
+    schema: expected,
+    system: systemPrompt,
+    prompt: userPrompt,
+  });
+  console.timeEnd('OpenAI GPT-4o (recommendationsForTheCommunity)')
+
+  return object.recommendations.map((item: string) => `- ${item}`).join('\n')
 }
