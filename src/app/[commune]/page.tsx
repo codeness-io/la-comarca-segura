@@ -78,7 +78,7 @@ export default async function Report({ params }: Parameters) {
                   <FloodIcon color="primary" fontSize="large" /> Amenaza
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {report.risk}
+                  <Markdown>{report.risk}</Markdown>
                 </Typography>
               </CardContent>
             </Card>
@@ -90,7 +90,7 @@ export default async function Report({ params }: Parameters) {
                   <FamilyRestroomIcon color="primary" fontSize="large" /> Exposición
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {report.exposition}
+                  <Markdown>{report.exposition}</Markdown>
                 </Typography>
               </CardContent>
             </Card>
@@ -102,7 +102,7 @@ export default async function Report({ params }: Parameters) {
                   <WarningAmberIcon color="primary" fontSize="large" /> Riesgo
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {report.risk_vs_exposition}
+                  <Markdown>{report.risk_vs_exposition}</Markdown>
                 </Typography>
               </CardContent>
             </Card>
