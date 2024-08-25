@@ -8,12 +8,12 @@
 .listSection {
   background-color: rgb(236 242 248);
   border-radius: 16px;
-  padding: 0px 32px;
+  padding: 0px 16px;
 }
 
 .listElement {
   border-bottom: 1px solid #061C3D12;
-  padding: 32px 0px;
+  padding: 16px 0px;
 }
 
 .listElement:last-child {

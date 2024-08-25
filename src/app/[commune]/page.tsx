@@ -1,12 +1,11 @@
 import { generateReport, recommendationsForTheCommunity } from "@/ai/report";
-import Markdown from 'react-markdown'
-import { getPrecipitationForecast, PrecipitationData } from "@/api/weather"
+import { getPrecipitationForecast } from "@/api/weather"
 
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import {Alert, Button, Container, Grid, Link, List, ListItem, ListItemIcon, ListItemText} from '@mui/material';
+import { Container, Grid, Link, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import styles from './page.module.css';
 import FloodIcon from '@mui/icons-material/Flood';
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
@@ -16,6 +15,8 @@ import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
+import WeatherAlert from "@/components/WeatherAlert";
+import Markdown from "react-markdown";
 
 dayjs.extend(localizedFormat);
 dayjs.locale('es');
@@ -55,7 +56,7 @@ export default async function Report({ params }: Parameters) {
   };
 
   return (
-    <Container>
+    <Container sx={{ paddingBottom: 4 }}>
       <Typography variant="h1">{`${capitalizeText(params.commune)}`}</Typography>
       <Grid container sx={{paddingTop: "40px"}}>
         <Grid item xs={12} md={6} sx={{paddingRight: "95px"}}>
@@ -123,9 +124,9 @@ export default async function Report({ params }: Parameters) {
                         <CheckIcon />
                       </ListItemIcon>
                       <ListItemText>
-                        <p className={styles.improvementDescription}>
+                        <Markdown>
                           {improvement}
-                        </p>
+                        </Markdown>
                       </ListItemText>
                     </ListItem>
                   )
@@ -148,9 +149,10 @@ export default async function Report({ params }: Parameters) {
                     Las próximas precipitaciones se esperan para el día {dayjs(precipitationForecast.daily.time[firstPrecipitationDay]).format('LL')}, con un acumulado estimado de {precipitationForecast.daily.precipitation_sum[firstPrecipitationDay]} mm
                   </Typography>
                   {firstAlertPrecipitationIndex > -1 ? (
-                    <Alert severity="error" sx={{ marginTop: 2 }}>
-                      Se esperan precipitaciones altas el día {dayjs(precipitationForecast.hourly.time[firstAlertPrecipitationIndex]).format('dddd, MMMM D [del] YYYY [a las] h:mm A')}.
-                    </Alert>
+                    <WeatherAlert
+                      recommendations={communityRecommendations}
+                      date={dayjs(precipitationForecast.hourly.time[firstAlertPrecipitationIndex]).format('dddd, MMMM D [del] YYYY [a las] h:mm A')}
+                    />
                   ) : null}
                 </>
               ) : (
@@ -162,10 +164,6 @@ export default async function Report({ params }: Parameters) {
           </Card>
         </Grid>
       </Grid>
-      <h2>¿Llueve o no llueve?</h2>
-      <p>
-        {precipitation > 0 ? `Sí, va a llover (${precipitation}mm)` : "No, no va a llover"}
-      </p>
     </Container>
   )
 }
