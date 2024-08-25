@@ -29,9 +29,8 @@ export default function WeatherAlert({ date, recommendations } : { date: string,
   return (
     <>
       <Alert
-        severity="error"
-        variant="outlined"
-        sx={{ marginTop: 2 }}
+        severity="warning"
+        sx={{ marginTop: 2, p: 2}}
         action={(
           <Button
             size="small"

@@ -44,7 +44,7 @@ export default function Form() {
         />
       )}
       <LoadingButton loading={loading} type="submit" variant="contained" color="primary" disabled={!region || !commune} sx={{ my: 4 }}>
-        Ver Sugerencias
+        Ver Recomendaciones
       </LoadingButton>
     </form>
   );
