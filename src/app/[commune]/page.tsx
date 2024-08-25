@@ -6,14 +6,19 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Button, Container, Grid, Link, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import {Alert, Button, Container, Grid, Link, List, ListItem, ListItemIcon, ListItemText} from '@mui/material';
 import styles from './page.module.css';
 import FloodIcon from '@mui/icons-material/Flood';
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import CheckIcon from '@mui/icons-material/Check';
 import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
+import dayjs from 'dayjs';
+import 'dayjs/locale/es';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
 
+dayjs.extend(localizedFormat);
+dayjs.locale('es');
 
 type Parameters = {
   params: {
@@ -28,13 +33,22 @@ const hasPrecipitation = (precipitation: number) => {
   return true;
 }
 
+function safeNumber(value: number | null) {
+  if (value === null) {
+    return 0;
+  }
+  return value;
+}
+
 export default async function Report({ params }: Parameters) {
   const report = await generateReport(params.commune);
   const communityRecommendations = await recommendationsForTheCommunity(params.commune, JSON.stringify(report, null, 2));
   const precipitationForecast = await getPrecipitationForecast(params.commune);
-  console.log(precipitationForecast);
-  const precipitation = precipitationForecast.daily.precipitation_sum.reduce((a, b) => a + b, 0);
-  const firstPrecipitationDay = precipitationForecast.daily.precipitation_sum.findIndex((unit) => unit > 0);
+  const precipitation = precipitationForecast.daily.precipitation_sum.map(safeNumber).reduce((a, b) => a + b, 0);
+  const firstPrecipitationDay = precipitationForecast.daily.precipitation_sum.map(safeNumber).findIndex((unit) => unit > 0);
+  const firstAlertPrecipitationIndex = precipitationForecast.hourly.precipitation.map(safeNumber).findIndex((unit) => unit > 0.5);
+
+  console.log(firstAlertPrecipitationIndex)
 
   const capitalizeText = (text: string) => {
     return text.charAt(0).toUpperCase() + text.slice(1);
@@ -129,15 +143,21 @@ export default async function Report({ params }: Parameters) {
                 <ThunderstormIcon color="primary" fontSize="large"/> Pronóstico de precipitaciones
               </Typography>
               {hasPrecipitation(precipitation) ? (
-                <Typography variant="body1">
-                  Se esperan {precipitationForecast.daily.precipitation_sum[firstPrecipitationDay]} mm de precipitaciones para el día {precipitationForecast.daily.time[firstPrecipitationDay]}
-                </Typography>
+                <>
+                  <Typography variant="body1">
+                    Las próximas precipitaciones se esperan para el día {dayjs(precipitationForecast.daily.time[firstPrecipitationDay]).format('LL')}, con un acumulado estimado de {precipitationForecast.daily.precipitation_sum[firstPrecipitationDay]} mm
+                  </Typography>
+                  {firstAlertPrecipitationIndex > -1 ? (
+                    <Alert severity="error" sx={{ marginTop: 2 }}>
+                      Se esperan precipitaciones altas el día {dayjs(precipitationForecast.hourly.time[firstAlertPrecipitationIndex]).format('dddd, MMMM D [del] YYYY [a las] h:mm A')}.
+                    </Alert>
+                  ) : null}
+                </>
               ) : (
                 <Typography variant="body1">
                   No se esperan precipitaciones para los próximos 16 días.
                 </Typography>
               )}
-              
             </CardContent>
           </Card>
         </Grid>
