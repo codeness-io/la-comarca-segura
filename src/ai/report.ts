@@ -80,7 +80,7 @@ El reporte contiene la siguiente información: Amenazas, Exposición, Riesgo y S
   const userPrompt = `
   En base al siguiente reporte de la comuna de ${commune} (Chile), genera un listado de medidas recomendadas que un habitante normal puede seguir para mitigar los riesgos de inundaciones.
   
-  Tu respuesta debe ser un listado recomendaciones en español (JSON). Cada recomendación debe ser simple, no técnica y fácil de seguir.
+  Tu respuesta debe ser un listado recomendaciones en español (JSON). Cada recomendación debe ser simple, no técnica y fácil de seguir. Agrega un emoji al final de cada recomendación para hacerla más amigable.
   
   {"recommendations": ["Medida 1", "**Medida 2**", ..., "Medida N"]}
   
@@ -100,5 +100,5 @@ El reporte contiene la siguiente información: Amenazas, Exposición, Riesgo y S
   });
   console.timeEnd('OpenAI GPT-4o (recommendationsForTheCommunity)')
 
-  return object.recommendations.map((item: string) => `- ${item}`).join('\n')
+  return object.recommendations;
 }
