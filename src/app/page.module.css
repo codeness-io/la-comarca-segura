@@ -1,0 +1,31 @@
+.mainTitle {
+  font-size: 44px;
+  font-weight: bold;
+}
+
+.reportCard {
+  min-width: 300px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.numbersSection {
+  background-color: rgb(242, 241, 241);
+  padding: 40px 120px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.number {
+  font-weight: bold;
+}
+
+.formDescription {
+  font-size: 20px;
+}
