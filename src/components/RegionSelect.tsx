@@ -15,7 +15,7 @@ function RegionSelect({ items, onChange, region } : RegionSelectProps) {
 
   return (
     <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+      <FormControl variant="standard" fullWidth sx={{ marginBottom: 1 }}>
         <InputLabel id="region-select-label">Región</InputLabel>
         <Select
           labelId="region-select-label"

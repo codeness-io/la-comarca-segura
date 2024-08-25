@@ -14,7 +14,7 @@ function CommuneSelect({ items, onChange, commune } : CommuneSelectProps) {
 
   return (
     <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+      <FormControl variant="standard" fullWidth>
         <InputLabel id="commune-select-label">Comuna</InputLabel>
         <Select
           labelId="commune-select-label"
